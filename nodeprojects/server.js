@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery',false);
 var routes=require('./route/routes');
 const cors = require ('cors')
-
+// git test
 app.use(cors(
   {
     origin:"http://localhost:4200"
