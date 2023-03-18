@@ -1,0 +1,92 @@
+const studentService = require('../service/studentService');
+const studentModel = require('../model/studentModel');
+
+const createStudentControllerFn = async (req, res)=>
+{
+    try
+    {
+        console.log(req.body);
+        const status = await studentService.createStudentDBService(req.body);
+        console.log(status);
+
+        if(status){
+            res.send({"status":true,"message":"User created successfully"});
+        } else{
+            res.send({"status":false,"message":"error creating user"});
+        }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+    
+}
+
+
+// var loginStudentControllerFn = async (req, res) =>{
+//     var result = null;
+//     try{
+//         result = await studentService.loginStudentDBService(req.body);
+//         if (result.status) {
+//             res.send({"status":true,"message":result.msg});
+//         }else{
+//             res.send({"status":false, "message": result.msg});
+//         }
+//     }catch (error){
+//         console.log(error);
+//         res.send({"status":false, "message":error.msg});
+//     }
+// }
+
+
+var loginStudentControllerFn = async (req, res) => {
+    var result = null;
+    try {
+      result = await studentService.loginStudentDBService(req.body);
+      if (result.status) {
+        // Récupérer les détails de l'utilisateur depuis la base de données
+        const user = await studentModel.findOne({ email: req.body.email });
+  
+        // Vérifier le rôle de l'utilisateur
+        if (user.role === 'admin') {
+          res.send({ status: true, message: result.msg });
+        } else if (user.role === 'candidat') {
+          res.send({ status: true, message: 'Bienvenue Candidat' });
+        } else if (user.role === 'formateur') {
+          res.send({ status: true, message: 'Bienvenue Formateur' });
+        } else {
+          res.send({ status: false, message: 'Rôle utilisateur inconnu' });
+        }
+      } else {
+        res.send({ status: false, message: result.msg });
+      }
+    } catch (error) {
+      console.log(error);
+      res.send({ status: false, message: error.msg });
+    }
+  };
+  
+
+
+var getStudent=async (req,res)=>{
+    try {
+        // if (req.user.role !== 'admin') {
+        //     return res.status(403).send('Forbidden');
+        // }
+        console.log('Getting students...');
+        const students = await studentModel.find(); //find(role:'condidat')
+        
+        console.log('Students:', students);
+        res.json(students);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+      }
+}
+
+
+
+
+
+
+module.exports = {createStudentControllerFn,loginStudentControllerFn,getStudent};
