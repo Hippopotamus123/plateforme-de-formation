@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>La liste des utilisateurs</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+		h1, h2, h3 {
+			margin-top: 0;
+			margin-bottom: 0.5em;
+			font-weight: bold;
+			text-align: center;
+			color: #555;
+		}
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+			width: 80%;
+			max-width: 1000px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		}
+		th, td {
+			padding: 1em;
+			text-align: center;
+			border-bottom: 1px solid #ddd;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		tr:hover {
+			background-color: #e0e0e0;
+		}
+		button {
+			padding: 0.5em 1em;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+		button:hover {
+			background-color: #555;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+		}
+		a {
+			display: inline-block;
+			padding: 0.5em 1em;
+			background-color: #fff;
+			color: #333;
+			border: 1px solid #333;
+			border-radius: 5px;
+			text-decoration: none;
+			transition: all 0.2s ease;
+		}
+		a:hover {
+			background-color: #333;
+			color: #fff;
+		}
+button.btn-edit {
+background-color: green;
+color: #fff;
+margin-right: 5px;
+}
+button.btn-delete {
+background-color: red;
+color: #fff;
+}
+	</style>
+</head>
+<body>
+	<h1>La liste des utilisateurs</h1>
+	<div>
+		<a href="register">Ajouter un utilisateur</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Email</th>
+				<th>Rôle</th>
+				<th>Numéro de téléphone</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let student of students">
+				<td>{{ student.firstname }}</td>
+				<td>{{ student.lastname }}</td>
+				<td>{{ student.email }}</td>
+				<td>{{ student.role }}</td>
+				<td>{{ student.phoneNumber }}</td>
+				<td>
+          <button type="button" class="btn btn-edit">Edit</button>
+<button type="button" class="btn btn-delete" (click)="onClickDelete(student._id)">Delete</button>
+
+
+
+
+          </td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
