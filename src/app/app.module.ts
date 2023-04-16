@@ -28,6 +28,8 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormationComponent } from './formation/formation.component';
+import { PdfInterceptor } from './core/interceptor/pdf.interceptor';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 
 
 
@@ -68,7 +70,13 @@ import { FormationComponent } from './formation/formation.component';
     
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PdfInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
