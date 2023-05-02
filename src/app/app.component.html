@@ -1,2 +1,55 @@
-<router-outlet></router-outlet>
-<lib-ng-toast></lib-ng-toast>
+
+
+<!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container> -->
+
+
+
+
+
+
+  
+  <!-- <app-sidebar *ngIf="authService.isAuthenticated()"></app-sidebar>
+  <div class="content">
+    <router-outlet *ngIf="router.url !== '/login'"></router-outlet>
+    
+    
+    <lib-ng-toast></lib-ng-toast> -->
+<!-- -------------------------------------------------- -->
+      <!-- <app-sidebar *ngIf="authService.isAuthenticated()"></app-sidebar>
+   
+    
+    <div class="content">
+      <div *ngIf="router.url !== '/login'">
+        <router-outlet></router-outlet>
+      </div>
+      <lib-ng-toast></lib-ng-toast>
+    </div> -->
+    <!-- -------------------------------------------- -->
+    <ng-container *ngIf="authService.isAuthenticated()">
+      <app-sidebar></app-sidebar>
+      <div class="content">
+        <router-outlet></router-outlet>
+        <lib-ng-toast></lib-ng-toast>
+      </div>
+    </ng-container>
+    
+    <ng-container *ngIf="!authService.isAuthenticated()">
+      <!-- <router-outlet></router-outlet> -->
+      <app-login></app-login>
+    </ng-container>
+    
+
+
+
+<!-- ----------------------------------------- -->
+      <!-- <router-outlet>
+        <app-sidebar></app-sidebar>
+      </router-outlet>
+      <lib-ng-toast></lib-ng-toast> -->

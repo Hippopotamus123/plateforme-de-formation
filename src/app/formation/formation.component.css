@@ -1,7 +1,71 @@
-.example-card {
+ .example-card {
     max-width: 400px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+
+  } 
+
+  body {
+
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    height: auto;
   }
-  img.mat-card-lg-image {
-    margin-left: 40px;
-    }
+  .button {
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 10px; 
+    cursor: pointer; 
+  }
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px !important;
+    /* padding: 20px; */
+    /* width: 100%; */
+  }
+ 
+  
+  
+  /* .example-card {
+    width: 300px; 
+    margin: 10px; 
+  } */
+  
+  /* mat-card-header {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    margin-right: 10px;
+  } */
+  
+  /* mat-card-subtitle {
+    display: flex; 
+    flex-direction: column; 
+  } */
+  
+  /* mat-card-lg-image {
+    max-width: 100%; 
+    height: auto; 
+  } */
+  
+  /* mat-card-actions {
+    display: flex; 
+    justify-content: space-between; 
+  } */
+ /* ------------------------------------  */
+
+ 
+
+
+  
+  
+  
+  
+  

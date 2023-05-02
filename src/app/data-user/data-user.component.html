@@ -1,13 +1,20 @@
-<mat-toolbar color="primary">
-   
+
+<!-- <mat-toolbar color="primary">
+	<button mat-icon-button>
+		<mat-icon>laptop</mat-icon>
+	  </button>
     <span>LearnIt</span>
     <span class="example-spacer"></span>
     <button mat-raised-button (click)="openAddEditUser()">
 		Add User
 	</button>
-  </mat-toolbar>
+  </mat-toolbar> -->
+ 
   <div class="body">
-  <mat-form-field>
+	<button class="addUser" mat-raised-button (click)="openAddEditUser()">
+		Add User
+	</button>
+  <mat-form-field class="filter">
 	<mat-label>Filter</mat-label>
 	<input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
   </mat-form-field>
@@ -62,6 +69,7 @@
 	  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
 	</tr>
   </table>
+  
 </div>
 
 

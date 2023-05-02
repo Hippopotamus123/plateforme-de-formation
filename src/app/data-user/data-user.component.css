@@ -8,13 +8,28 @@
     font-size: 14px;
     width: 100%;
   }
-  .body{
-    padding-top: 20px;
-    margin: 0 auto;
-    max-width: 1248px;
+ 
    
-  }
+  
   .mat-elevation-z8{
-    width: 100%;
-    float: right;
+    width: 90%;
+    margin-left: 50px;
   }
+  .filter{
+    margin-left: 50px;
+  }
+  .mat-toolbar {
+    background:#2a52be;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  .addUser{
+  margin-left: 1100px;
+  margin-top: 10px;
+  position: absolute;
+}
+  
+  

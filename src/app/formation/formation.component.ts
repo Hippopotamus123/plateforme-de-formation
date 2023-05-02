@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { MatDialog } from '@angular/material/dialog';
-
+import { AddFormationComponent } from './add-formation/add-formation.component';
+import { EditFormationComponent } from './edit-formation/edit-formation.component';
 @Component({
   selector: 'app-formation',
   templateUrl: './formation.component.html',
@@ -26,4 +27,46 @@ export class FormationComponent implements OnInit {
       }
     );
   }
+  onClickDelete(formationId: string) {
+    const confirmDelete = confirm('Are you sure you want to delete this course ?');
+    if (confirmDelete) {
+      this.userService.deleteFormation(formationId).subscribe(
+        (response) => {
+          console.log('Formation deleted successfully:', response);
+          this.ngOnInit();
+          // Add your code to update the list of students here
+        },
+        (error) => {
+          console.error('Error deleting student:', error);
+        }
+      );
+    }
+  }
+
+
+
+
+  openAddEditUser(){
+    const dialogRef= this._dialog.open(AddFormationComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.ngOnInit();
+        }
+      },
+    });
+   } 
+   openEditUser(data: any){
+    const dialogRef= this._dialog.open(EditFormationComponent ,{
+      data,
+    });
+      dialogRef.afterClosed().subscribe({
+        next: (val) => {
+          if (val) {
+            this.ngOnInit();
+          }
+        },
+      });
+
+    }
 }

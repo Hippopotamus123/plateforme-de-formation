@@ -28,6 +28,17 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormationComponent } from './formation/formation.component';
+import { AddFormationComponent } from './formation/add-formation/add-formation.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
+import { PdfInterceptor } from './core/interceptor/pdf.interceptor';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import {MatListModule} from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { EspaceComponent } from './espace/espace.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { AddReponseComponent } from './add-reponse/add-reponse.component';
 
 
 
@@ -44,6 +55,14 @@ import { FormationComponent } from './formation/formation.component';
     ModifierUserComponent,
     AddUpdateUserComponent,
     FormationComponent,
+    AddFormationComponent,
+    EditFormationComponent,
+    EspaceComponent,
+    QuestionsComponent,
+    EditQuestionComponent,
+    AddReponseComponent,
+   
+   
    
   ],
   imports: [
@@ -64,11 +83,20 @@ import { FormationComponent } from './formation/formation.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule
 
     
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PdfInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

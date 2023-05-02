@@ -7,13 +7,9 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ModifierUserComponent } from './modifier-user/modifier-user.component';
 import { UserService } from '../services/user.service';
+// import { PdfInterceptor } from '../core/interceptor/pdf.interceptor';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
  
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   weight: number;
-//   symbol: string;
-// }
 
 
 @Component({
@@ -34,13 +30,13 @@ export class DataUSERComponent implements OnInit {
 
   // students: any[] = [];
   constructor(private http: HttpClient,public _dialog: MatDialog,private userService: UserService) { }
-
+ 
   ngOnInit() {
     this.http.get<any[]>('http://127.0.0.1:9000/students').subscribe(
       (data) => {
         // this.students = data;
         this.dataSource = new MatTableDataSource(data);
-
+       
 
       },
       (error) => {

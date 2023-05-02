@@ -7,6 +7,10 @@ import { DataUSERComponent } from './data-user/data-user.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormationComponent } from './formation/formation.component';
+import { EspaceComponent } from './espace/espace.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { AddReponseComponent } from './add-reponse/add-reponse.component';
 // import { ChattingComponent } from './chatting/chatting.component';
 const routes: Routes = [
   {
@@ -37,6 +41,19 @@ const routes: Routes = [
     path:'formation',
     component:FormationComponent
     },
+    {
+      path:'question-reponse',
+      component:EspaceComponent
+    },
+    {
+      path:'question',
+      component:QuestionsComponent
+    },
+    { path: 'edit-question/:id',
+     component: EditQuestionComponent },
+     { path: 'add-reponse/:id',
+     component: AddReponseComponent }
+
   // {
   //   path:'chatting',
   //   component:ChattingComponent
