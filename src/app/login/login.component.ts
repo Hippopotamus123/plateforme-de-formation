@@ -52,18 +52,18 @@ erroMessage: string="";
         if (resultData.status) {
           this.toast.success({
             detail: 'success message',
-            summary: 'login success',
+            summary: "login success",
             duration: 5000
           });
           this.authService.setToken(resultData.token);
           console.log(resultData.id)
           // this.cookieService.delete('userId');
           this.cookieService.set('userId', String(resultData.id));
-          this.router.navigateByUrl('/data-user');
+          this.router.navigateByUrl('/dashboard');
         } else {
           this.toast.error({
             detail: 'error message',
-            summary: 'login failed, incorrect email or password',
+            summary: "login failed, incorrect email or password",
             duration: 5000
           });
           console.log('error login');

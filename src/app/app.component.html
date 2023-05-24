@@ -42,7 +42,9 @@
     
     <ng-container *ngIf="!authService.isAuthenticated()">
       <!-- <router-outlet></router-outlet> -->
+     
       <app-login></app-login>
+      <lib-ng-toast></lib-ng-toast>
     </ng-container>
     
 

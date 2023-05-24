@@ -87,7 +87,7 @@ i{
     border: none;
     border-radius: 30px;
     font-size: 15px;
-    height: 30px;
+    height: 40px;
     outline: none;
     width: 50%;
     color: black;
@@ -95,7 +95,7 @@ i{
     cursor: pointer;
     transition: .3s ;
     position: relative;
-    right: -132px;
+    right: -80px;
 }
 .submit:hover{
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);

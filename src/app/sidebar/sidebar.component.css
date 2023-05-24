@@ -273,5 +273,10 @@ h1 {
   text-align: center;
   margin-top: 10px;
 }
-
+.btn2{
+  background-color: #2a52be;
+  border: none;
+  width: 200px;
+  text-align: left;
+}
 

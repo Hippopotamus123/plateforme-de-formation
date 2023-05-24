@@ -1,0 +1,15 @@
+/* #chart {
+    max-width: 380px;
+    margin: 35px auto;
+    padding: 0;
+  } */
+
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 40vh
+  }
+  .bzt{
+    /* display:flex; */
+  }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -39,8 +38,19 @@ import { EspaceComponent } from './espace/espace.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import { AddReponseComponent } from './add-reponse/add-reponse.component';
+import { ContentFormationComponent } from './formation/content-formation/content-formation.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DatePipe } from '@angular/common';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { CreateQuizzComponent } from './create-quizz/create-quizz.component';
+import { QuizzComponent } from './quizz/quizz.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { InscriptionsComponent } from './inscriptions/inscriptions.component';
 
 // import { ChattingComponent } from './chatting/chatting.component';
 @NgModule({
@@ -61,6 +71,11 @@ import { AddReponseComponent } from './add-reponse/add-reponse.component';
     QuestionsComponent,
     EditQuestionComponent,
     AddReponseComponent,
+    ContentFormationComponent,
+    CreateQuizzComponent,
+    QuizzComponent,
+    InscriptionsComponent,
+   
    
    
    
@@ -85,8 +100,14 @@ import { AddReponseComponent } from './add-reponse/add-reponse.component';
     MatSortModule,
     MatSidenavModule,
     MatListModule,
-    MatMenuModule
-
+    MatMenuModule,
+    NgxFileDropModule,
+    MatProgressBarModule,
+    MatCheckboxModule,
+    DatePipe,
+    NgApexchartsModule,
+    MatRadioModule,
+    ReactiveFormsModule,
     
     
   ],

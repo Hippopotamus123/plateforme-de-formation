@@ -1,12 +1,13 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild,AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUpdateUserComponent } from './add-update-user/add-update-user.component';
-import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ModifierUserComponent } from './modifier-user/modifier-user.component';
 import { UserService } from '../services/user.service';
+
+import {MatPaginator,MatPaginatorIntl } from '@angular/material/paginator';
 // import { PdfInterceptor } from '../core/interceptor/pdf.interceptor';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
  
@@ -19,15 +20,19 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 })
 
 
-export class DataUSERComponent implements OnInit {
+export class DataUSERComponent implements AfterViewInit  {
   // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   displayedColumns: string[] = [ 'firstname','lastname', 'email', 'role','phoneNumber','action'];
   // dataSource = new MatTableDataSource(any);
   dataSource!: MatTableDataSource<any>;
 
   
-
-
+  // @ViewChild(MatPaginator) paginator: MatPaginator = {};
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
+// @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  
+  
   // students: any[] = [];
   constructor(private http: HttpClient,public _dialog: MatDialog,private userService: UserService) { }
  
@@ -36,7 +41,7 @@ export class DataUSERComponent implements OnInit {
       (data) => {
         // this.students = data;
         this.dataSource = new MatTableDataSource(data);
-       
+        this.dataSource.paginator=this.paginator
 
       },
       (error) => {
@@ -90,5 +95,9 @@ export class DataUSERComponent implements OnInit {
 applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();
+}
+ngAfterViewInit() {
+  this.dataSource.paginator = this.paginator;
+  
 }
 }

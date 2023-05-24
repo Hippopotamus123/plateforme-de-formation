@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../sidebar/sidebar.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -79,4 +79,18 @@ export class UserService {
   //   const url = `http://127.0.0.1:9000/students/${userId}`;
   //   return this.http.get<User>(url);
   // }
+  download(){
+    return this.http.get('http://127.0.0.1:9000/download',
+    {responseType: 'blob', reportProgress:true,observe:"events"})
+  }
+  getReponses():Observable<any> {
+    const url = `http://127.0.0.1:9000/reponses`;
+    return this.http.get<any[]>(url);
+  }
+  add_quiz(body:any){
+    return this.http.post(`http://127.0.0.1:9000/quizz/create`, body)
+  }
+  get_quiz(id:any){
+    return this.http.get(`http://127.0.0.1:9000/quizz/${id}`)
+  }
 }

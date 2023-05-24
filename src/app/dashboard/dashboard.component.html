@@ -1,12 +1,38 @@
-<p>dashboard works!</p>
-sdfqsdfqsdf
-qsdf
+<!-- <apx-chart [chart]="chartOptions"></apx-chart> -->
 
-sqdf
-sqd
-f
-qsdf
+<!-- <apx-chart
+id="bar"
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [xaxis]="chartOptions.xaxis"
+></apx-chart> -->
 
-qsdf
-qs
-<p>yoo</p>
+<div class="circle-container">
+  <apx-chart
+    id="pie"
+    [series]="chartPieOptions.series"
+    [chart]="chartPieOptions.chart"
+    [labels]="chartPieOptions.labels"
+  ></apx-chart>
+</div>
+
+<div class="bzt">
+<apx-chart
+  id="user-inscription"
+  [series]="chartUserOptions.series"
+  [chart]="chartUserOptions.chart"
+  [xaxis]="chartUserOptions.xaxis"
+  [plotOptions]="chartUserOptions.plotOptions"
+  [dataLabels]="chartUserOptions.dataLabels"
+></apx-chart>
+</div>
+
+<!-- <div id="chart">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [dataLabels]="chartOptions.dataLabels"
+    [plotOptions]="chartOptions.plotOptions"
+    [xaxis]="chartOptions.xaxis"
+  ></apx-chart>
+</div> -->

@@ -108,14 +108,17 @@
           <!-- <p>{{ user.email }}</p> -->
           <!-- <img [src]="user.photoUrl" alt="{{ user.firstname }} {{ user.lastname }}"> -->
         </div>
+
         <ul>
-         
-          <!-- <h2 *ngFor="let student of students">{{student.firstname }}</h2> -->
-          <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-          <li><a routerLink="/data-user"><i class="fa fa-users"></i> Users</a></li>
-          <li><a routerLink="/formation"><i class="fa fa-graduation-cap"></i> Formations</a></li>
-          <li><a routerLink="/home"><i class="fa fa-envelope"></i> Contact</a></li>
+          <button class="btn2">
+            <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a routerLink="/data-user"><i class="fa fa-users"></i> Users</a></li>
+            <li><a routerLink="/inscriptions"><i class="fa fa-users"></i> Inscriptions</a></li>
+            <li><a routerLink="/formation"><i class="fa fa-graduation-cap"></i> Formations</a></li>
+            <li><a routerLink="/question"><i class="fa fa-envelope-open"></i> Questions-answers</a></li>
+          </button>       
         </ul>
+        
       </div>
     </div>
     

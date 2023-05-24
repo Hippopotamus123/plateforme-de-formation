@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
@@ -7,8 +9,11 @@ import { UserService } from '../services/user.service';
 })
 export class QuestionsComponent implements OnInit {
   questions: any[] = [];
-
-  constructor(private userService:UserService) { }
+  showAnswerInput: boolean = false;
+  currentQuestion: any;
+  description: string="";
+  reponses:any[] = [];
+  constructor(private userService:UserService,private cookieService: CookieService,private http: HttpClient) { }
 
   ngOnInit(): void {
     
@@ -18,8 +23,14 @@ export class QuestionsComponent implements OnInit {
       // this.userService.getReponse().subscribe(data => {
       //   this.questions = data;
       // });
-    
+    this.userService. getReponses().subscribe(data => {
+    this.reponses = data;
+  });
+      
+      
   }
+  
+ 
   onClickDelete(questionId: string) {
     const confirmDelete = confirm('Are you sure you want to delete this question ?');
     if (confirmDelete) {
@@ -35,4 +46,31 @@ export class QuestionsComponent implements OnInit {
       );
     }
   }
+  showAnswerInputField(question: any) {
+    this.showAnswerInput = true;
+    this.currentQuestion = question;
+  }
+
+  addAnswer(description: string) {
+    const bodyData = {
+      "description": description,
+      "auteur": this.cookieService.get('userId'),
+      "question": this.currentQuestion._id
+    };
+    
+    
+    
+    this.userService.addReponse(bodyData).subscribe((resultData: any) => {
+      if (resultData.status) {
+        console.log(resultData);
+        // ajouter une notification de réussite ici
+        this.showAnswerInput = false;
+        this.ngOnInit();
+      } else {
+        console.log(Error)
+        // ajouter une notification d'erreur ici
+      }
+    });
+  }
 }
+ 

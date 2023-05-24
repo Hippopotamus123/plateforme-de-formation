@@ -11,6 +11,10 @@ import { EspaceComponent } from './espace/espace.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import { AddReponseComponent } from './add-reponse/add-reponse.component';
+import { ContentFormationComponent } from './formation/content-formation/content-formation.component';
+import { CreateQuizzComponent } from './create-quizz/create-quizz.component';
+import { QuizzComponent } from './quizz/quizz.component';
+import { InscriptionsComponent } from './inscriptions/inscriptions.component';
 // import { ChattingComponent } from './chatting/chatting.component';
 const routes: Routes = [
   {
@@ -52,8 +56,23 @@ const routes: Routes = [
     { path: 'edit-question/:id',
      component: EditQuestionComponent },
      { path: 'add-reponse/:id',
-     component: AddReponseComponent }
-
+     component: AddReponseComponent },
+     {
+      path:'content',
+      component:  ContentFormationComponent 
+    },
+    {
+      path:'quizz/create',
+      component:  CreateQuizzComponent 
+    },
+    {
+      path:'quizz',
+      component:  QuizzComponent
+    },
+    {
+      path:'inscriptions',
+      component: InscriptionsComponent
+    }
   // {
   //   path:'chatting',
   //   component:ChattingComponent
