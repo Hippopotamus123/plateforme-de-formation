@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgToastService } from 'ng-angular-popup';
-// import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import {FileSelectDirective,FileUploader} from'ng2-file-upload';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,76 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './content-formation.component.html',
   styleUrls: ['./content-formation.component.css']
 })
-// export class ContentFormationComponent implements OnInit {
 
-//   selectedFile: File | undefined;
-//   uploadResponse: any | undefined;
-//   errorMessage: string | undefined;
-//   uploadedFiles: any[] = [];
-//   constructor(private http: HttpClient,private toast:NgToastService) {}
-//   ngOnInit(): void {
-//     this.uploadResponse = null;
-//     this.uploadedFiles = [];
-//   }
-  
-
-//   onFileSelected(event: any) {
-//     this.selectedFile = event.target.files[0];
-//   }
-
-//   uploadFile() {
-
-//     if (!this.selectedFile) {
-//       this.errorMessage = 'Veuillez sélectionner un fichier.';
-//       return;
-//     }
-//   }
-  
-//   upload() {
-//     if (this.selectedFile) {
-//       const formData = new FormData();
-//       formData.append('file', this.selectedFile);
-  
-//       this.http.post<any>('http://127.0.0.1:9000/upload', formData).subscribe(
-//         (response) => {
-//           console.log(response);
-//           this.uploadResponse = response;
-//           this.downloadFile(response.fileName);
-//         },
-//         (error) => {
-//           console.log(error);
-//           this.errorMessage =
-//             "Une erreur s'est produite lors du téléchargement du fichier.";
-//           this.toast.error({
-//             detail: 'error message',
-//             summary:
-//               "Une erreur s'est produite lors du téléchargement du fichier.",
-//             duration: 5000,
-//           });
-//         }
-//       );
-//     } else {
-//       this.toast.error({
-//         detail: 'error message',
-//         summary: 'No file selected !',
-//         duration: 5000,
-//       });
-//     }
-//   }
-  
-//   downloadFile(fileName: string) {
-//     const url = `http://127.0.0.1:9000/${fileName}`;
-//     this.http.get(url, { responseType: 'blob' }).subscribe((response) => {
-//       const a = document.createElement('a');
-//       const objectUrl = URL.createObjectURL(response);
-//       a.href = objectUrl;
-//       a.download = fileName;
-//       a.click();
-//       URL.revokeObjectURL(objectUrl);
-//     });
-//   }
-  
-// }
 
 export class ContentFormationComponent implements OnInit {
   voteValue: number | undefined;
@@ -197,9 +127,8 @@ export class ContentFormationComponent implements OnInit {
 
 
   submitVote() {
-    // const formationId = '644b06c4c271be72c76ee7ad';
-     // Remplacez par l'ID de la formation sélectionnée
-    const userId = this.cookieService.get('userId'); // Remplacez par l'ID de l'utilisateur connecté
+  
+    const userId = this.cookieService.get('userId');
     const voteData = {
       formationId:this.formation_id,
       userId: userId,
@@ -210,11 +139,9 @@ export class ContentFormationComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          // Traitez la réponse du backend si nécessaire
         },
         error => {
           console.error(error);
-          // Gérez l'erreur en conséquence
         }
       );
   }

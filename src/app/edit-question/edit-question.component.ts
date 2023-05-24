@@ -20,16 +20,7 @@ export class EditQuestionComponent implements OnInit {
   question: any = {};
 
  
-  //   // this.questionId = this.activatedRoute.snapshot.params._id;
-  //   this.questionId = this.activatedRoute.snapshot.params['_id'];
-  //   this.userService.getQuestionById(this.questionId).subscribe(
-  //     (data: any) => {
-  //       this.question = data;
-  //     },
-  //     (error: any) => {
-  //       console.log(error);
-  //     }
-  //   );
+ 
   ngOnInit() {
   this.route.params.subscribe(params => {
     this.questionId = params['id'];

@@ -7,7 +7,6 @@ import { EditFormationComponent } from './edit-formation/edit-formation.componen
 import { AuthService } from '../services/auth-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { NgToastService } from 'ng-angular-popup';
-// import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-formation',
@@ -41,7 +40,6 @@ export class FormationComponent implements OnInit {
         (response) => {
           console.log('Formation deleted successfully:', response);
           this.ngOnInit();
-          // Add your code to update the list of students here
         },
         (error) => {
           console.error('Error deleting student:', error);

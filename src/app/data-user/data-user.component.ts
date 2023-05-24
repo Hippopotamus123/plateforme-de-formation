@@ -21,16 +21,16 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 
 
 export class DataUSERComponent implements AfterViewInit  {
-  // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  
   displayedColumns: string[] = [ 'firstname','lastname', 'email', 'role','phoneNumber','action'];
   // dataSource = new MatTableDataSource(any);
   dataSource!: MatTableDataSource<any>;
 
   
-  // @ViewChild(MatPaginator) paginator: MatPaginator = {};
+ 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   
-// @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+
   
   
   // students: any[] = [];
