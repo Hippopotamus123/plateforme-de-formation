@@ -63,3 +63,10 @@ Amir Abdellaoui
   button:hover {
     background-color: #0062cc;
   }
+  .button_quizz{
+    margin-left: 25px;
+  }
+  .h2{
+    margin-left: 20px;
+    margin-top: 10px;
+  }

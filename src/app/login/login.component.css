@@ -22,7 +22,7 @@
 }
 
 body{
-    background-image: url("src/assets/images/10.jpg");
+    background-image: url("src/assets/images/formation2.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -33,10 +33,12 @@ body{
 }
 
 .box{
+    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin-right: 150px;
 }
 .container{
     width: 350px;
@@ -72,6 +74,19 @@ header{
     background: rgba(255,255,255,0.1);
     outline: none;
 }
+.input-login .input{
+    margin: 5px;
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none; 
+    
+}
 i{
 
     position: relative;
@@ -96,6 +111,7 @@ i{
     transition: .3s ;
     position: relative;
     right: -80px;
+    margin-top: 20px;  
 }
 .submit:hover{
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);

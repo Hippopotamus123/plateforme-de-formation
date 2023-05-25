@@ -12,7 +12,7 @@
     height: auto;
   }
   .button {
-    width: 200px;
+    width: 150px;
     background-color:  #1E88E5; 
     border: none; 
     color: white; 
@@ -28,8 +28,6 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px !important;
-    /* padding: 20px; */
-    /* width: 100%; */
   }
  
   .text22{
@@ -43,8 +41,9 @@
   bottom: 10px;
 }
 .button2 {
+  
   float: right;
-  width: 100px;
+  width: 150px;
   background-color: #1E88E5; 
   border: none; 
   color: white; 
@@ -54,6 +53,7 @@
   font-size: 16px; 
   margin: 20px 20px; 
   cursor: pointer; 
+ 
 }
 
 .start svg{
@@ -75,33 +75,6 @@
 }
 
 
-  /* .example-card {
-    width: 300px; 
-    margin: 10px; 
-  } */
-  
-  /* mat-card-header {
-    display: flex; 
-    align-items: center;
-    justify-content: space-between; 
-    margin-right: 10px;
-  } */
-  
-  /* mat-card-subtitle {
-    display: flex; 
-    flex-direction: column; 
-  } */
-  
-  /* mat-card-lg-image {
-    max-width: 100%; 
-    height: auto; 
-  } */
-  
-  /* mat-card-actions {
-    display: flex; 
-    justify-content: space-between; 
-  } */
- /* ------------------------------------  */
 
  
 

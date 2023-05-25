@@ -34,7 +34,7 @@
             <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="input" id="" placeholder="Password">
         </div>
 
-        <div class="input-field">
+        <div class="input-login">
             <input type="submit" class="submit" value="Login" id="" (click)="login()">
         </div>
         <!-- <div class="input-field">
@@ -47,7 +47,7 @@
                <label for="check"> Remember Me</label>
             </div>
             <div class="two">
-                <label><a href="#">Forgot password?</a></label>
+                <label><a href="#" (click)="Forgot()">Forgot password?</a></label>
             </div>
         </div>
     </div>

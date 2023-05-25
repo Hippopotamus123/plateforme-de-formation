@@ -139,9 +139,21 @@ export class ContentFormationComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          this.toast.success({
+            detail: 'success vote',
+            summary:
+              "You have voted for this training program",
+            duration: 5000,
+          });
         },
         error => {
           console.error(error);
+          this.toast.error({
+            detail: 'Problem!',
+            summary:
+              "You have already voted this formation!",
+            duration: 5000,
+          });
         }
       );
   }

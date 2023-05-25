@@ -22,10 +22,12 @@ export interface User {
 export class SidebarComponent implements OnInit {
   user: User | undefined;
   private unsubscribe$ = new Subject<void>();
+  userRole!: string;
   constructor(private UserService: UserService,private router:Router, private authService:AuthService,private cookieService: CookieService, private changeDetectorRef: ChangeDetectorRef,) { }
   ngOnInit() {
  
     this.fetchUserData();
+    this.userRole = this.authService.getUserRole();
   }
   fetchUserData() {
   const userId = this.cookieService.get('userId');

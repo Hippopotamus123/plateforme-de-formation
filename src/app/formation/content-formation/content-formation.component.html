@@ -25,7 +25,7 @@
 </div>
 
 <div class="rating-container">
-  <h3>Votez pour cette formation:</h3>
+  <h3><b>vote for this formation</b> </h3>
   <div class="rating-stars">
     <span class="star" (click)="setVote(1)" [class.active]="voteValue === 1">&#9733;</span>
     <span class="star" (click)="setVote(2)" [class.active]="voteValue === 2">&#9733;</span>
@@ -33,7 +33,7 @@
     <span class="star" (click)="setVote(4)" [class.active]="voteValue === 4">&#9733;</span>
     <span class="star" (click)="setVote(5)" [class.active]="voteValue === 5">&#9733;</span>
   </div>
-  <button class="vote-button" (click)="submitVote()">Soumettre le vote</button>
+  <button class="vote-button" (click)="submitVote()">Submit the vote</button>
   
 </div>
 

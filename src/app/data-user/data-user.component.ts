@@ -23,7 +23,6 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 export class DataUSERComponent implements AfterViewInit  {
   
   displayedColumns: string[] = [ 'firstname','lastname', 'email', 'role','phoneNumber','action'];
-  // dataSource = new MatTableDataSource(any);
   dataSource!: MatTableDataSource<any>;
 
   
@@ -33,13 +32,12 @@ export class DataUSERComponent implements AfterViewInit  {
 
   
   
-  // students: any[] = [];
+
   constructor(private http: HttpClient,public _dialog: MatDialog,private userService: UserService) { }
  
   ngOnInit() {
     this.http.get<any[]>('http://127.0.0.1:9000/students').subscribe(
       (data) => {
-        // this.students = data;
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator=this.paginator
 

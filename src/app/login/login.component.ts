@@ -56,6 +56,13 @@ erroMessage: string="";
       }
     );
   }
+  Forgot(){
+    this.toast.info({
+      detail: 'Info',
+      summary: "Please contact the administration",
+      duration: 5000
+    });
+  }
   
   }
 
